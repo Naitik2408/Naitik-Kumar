@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home{
+    width: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* This is title part ..............................  */
+
+.home-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+.home-title h1{
+    font-size: 2.6em;
+    letter-spacing: 0.13em;
+    text-shadow: rgba(0, 0, 0, 0.844) 9px 14px 2px;
+}
+.home-title h2{
+    letter-spacing: 0.68em;
+    font-weight: 400;
+    font-size: 1.32em;
+    text-shadow: rgba(0, 0, 0, 0.844) 9px 14px 2px;
+}
+.home-title h3{
+    letter-spacing: 0.143em;
+    font-weight: 200;
+    font-size: 1.06em;
+    text-shadow: rgba(0, 0, 0, 0.844) 9px 14px 2px;
+}
+/* This is image and social part of the home page .................................  */
+.profile-image-and-solical-links{
+    width: 100%;
+    height: 400px;
+    margin-top: 3em;
+}
+.profile-image-and-solical-links .image-box{
+    position: relative;
+}
+.profile-image-and-solical-links .social-link{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    font-size: 1.2em;
+}
+.social-link .icons{
+    font-size: 25px;
+    margin-top: 5px;
+    box-shadow: rgba(0, 0, 0, 0.844) 6px 10px 6px;
+    border-radius: 6px;
+}
+.profile-image-and-solical-links .social-link a{
+    margin: 0.15em 0;
+}
+
+.profile-image-and-solical-links .image-box .image-background{
+    width: 260px;
+    height: 280px;
+    border-radius: 200px 60px 150px 100px;
+    transform: rotate(4deg);
+    position: absolute;
+    top: 100px;
+    right: 23px;
+    transition: 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.744) 0px 14px 8px;
+}
+/* .profile-image-and-solical-links .image-box .image-background:hover{
+    transform: rotateZ(30deg);
+} */
+
+
+
+@media (min-width: 768px) {
+    .home{
+        flex-direction: row;
+        position: relative;
+        padding: 2rem;
+    }
+
+    .profile-image-and-solical-links{
+        width: 50%;
+    }
+    .profile-image-and-solical-links .image-box .image-background{
+        width: 360px;
+        height: 380px;
+        top: 0;
+        /* background: #00D8FF; */
+    }
+    .home-title{
+        order: 2;
+        font-size: 35px;
+        position: absolute;
+        right: 200px;
+        z-index: 100;
+    }
+    .home-title h1{
+        font-size: 2.6em;
+        letter-spacing: 0.13em;
+        font-weight: 600;
+    }
+    .home-title h2{
+        letter-spacing: 0.68em;
+        font-weight: 400;
+        font-size: 1.32em;
+    }
+    .home-title h3{
+        letter-spacing: 0.143em;
+        font-weight: 200;
+        font-size: 1.06em;
+    }
+  }

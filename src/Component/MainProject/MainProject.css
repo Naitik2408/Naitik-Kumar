@@ -1,0 +1,99 @@
+.main-project{
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+}
+.main-project-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.main-project-image .image-title{
+    color: rgb(222, 222, 222);
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    font-weight: 500;    
+    text-shadow: 5px 5px 10px rgb(0, 0, 0),
+    5px 5px 1px rgb(0, 0, 0)
+}
+.main-project-image img{
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.844) 0px 14px 10px;
+}
+.main-porject-details{
+    color: rgb(226, 226, 226);
+    margin-top: 30px;
+    font-weight: 200;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+.links{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.links li{
+    margin-left: 15px;
+    cursor: pointer;
+}
+.links li:nth-child(1){
+    padding: 9px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0),
+    1px 1px 5px rgb(0, 0, 0)
+}
+.links li:nth-child(2) .ab{
+    font-size: 0.95em;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-weight: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0),
+    1px 1px 5px rgb(0, 0, 0)
+}
+.links .previewIcon{
+    margin-left: 6px;
+}
+.project-details-about .features{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.project-details-about .features .icons{
+    margin-right: 4px;
+    color: goldenrod;
+}
+.project-details-about ul{
+    list-style: circle;
+}
+.project-details-about ul li{
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+@media (min-width: 768px){
+    .main-project{
+        display: flex;
+    }
+    .main-project-image{
+        width: 40%;
+        /* background-color: red; */
+        height: 100%;
+        justify-content: start;
+    }
+    .main-porject-details{
+        padding: 40px;
+        width: 60%;
+        /* background-color: green; */
+        height: 100%;
+        margin-top: 0;
+    }
+}

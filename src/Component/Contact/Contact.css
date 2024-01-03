@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+.contact{
+    width: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+}
+.contact-title{
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    font-family: 'JetBrains Mono', monospace;
+    color: #bec7d3;
+}
+.contact-title span{
+    color: #a87efa;
+    margin-right: 3px;
+  }
+.company-name{
+    color: rgb(177, 177, 177);
+    color: rgb(128, 128, 128);
+    font-weight: 300;
+    font-size: 0.85em;
+}
+.companies select{
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    padding: 0.7em 0.5em;
+    border: none;
+    outline: none;
+    background: #00D8FF;
+    box-shadow: rgba(0, 0, 0, 0.844) 0px 14px 15px;
+    color: black;
+}
+.contact input{
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    /* border-bottom: 1px solid rgb(188, 188, 188); */
+    font-size: 0.9em;
+    padding: 11px 6px;
+    margin: 1.2em 0;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.844) 9px 14px 15px;
+    border-radius: 3px;
+    background-color: rgb(14, 14, 14);
+}
+.contact input::-webkit-input-placeholder{
+    color: rgb(103, 103, 103);
+}
+.contact textarea::placeholder{
+    color: rgb(103, 103, 103);
+}
+.contact textarea{
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.844) 9px 14px 15px;
+    border-radius: 3px;
+    background-color: rgb(14, 14, 14);
+    margin-top: 7px;
+}
+.form-and-images .submit{
+    width: fit-content;
+    padding: 5px 22px;
+    border-radius: 4px;
+    border: none;
+    margin-top: 2em;
+    cursor: pointer;
+    background-color: #00D8FF;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.744) 0px 14px 15px;
+}
+.error{
+    color: red;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+
+@media (min-width: 768px){
+    .contact{
+        padding: 2rem;
+    }
+    .contact-title{
+        font-size: 1.8em;
+    }
+    .company-name{
+        color: rgb(224, 224, 224);
+        font-weight: 300;
+        font-size: 1em;
+    }
+    .contact form{
+        width: 55%;
+    }
+    .contact textarea{
+        height: 200px;
+    }
+    .form-and-images {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .form-and-images .image-part{
+        width: 45%;
+        display: flex;
+        justify-content: center;
+    }
+    .form-and-images .image-part .image-box{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .form-and-images .image-part .image-box .image1,.image2{
+        height: 100%;
+        width: 150px;
+        margin: 0 20px;
+        background:linear-gradient(rgba(0, 0, 0, 0.105),rgba(0, 0, 0, 0.053)), url('https://images.unsplash.com/photo-1620403724159-40363e84a155?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        border-radius: 20px;
+        box-shadow: inset 10px 10px 8px 8px rgba(0, 0, 0, 0.856);
+    }
+    .form-and-images .image-part .image-box .image2{
+        background-position-x: -170px;
+    }
+}
+
+
+
