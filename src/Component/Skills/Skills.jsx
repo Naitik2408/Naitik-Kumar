@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import './Skills.css'
-import {LineChart} from '../../index'
+import { LineChart } from '../../index'
 import { useDispatch, useSelector } from 'react-redux'
 import { setHtml, setCss, setJavascript, setReact } from '../../Store/BarData'
 
 
 function Skills() {
-  const divRef=React.createRef()
+  const divRef = React.createRef()
   const dispatch = useDispatch()
   const allFrameworks = useSelector(state => state.langBarData.language)
-  const [copy,setCopy] = useState('fa-regular fa-copy');
-  const handleCopyBtn = ()=>{
+  const [copy, setCopy] = useState('fa-regular fa-copy');
+  const handleCopyBtn = () => {
     setCopy('fa-solid fa-check');
     const innertext = divRef.current.innerText;
     navigator.clipboard.writeText(innertext)
@@ -20,7 +20,17 @@ function Skills() {
   }
   return (
     <div className='skills'>
-      <div className="skills-title"><span>#</span>Skills</div>
+      <div className="skills-title">
+        <lord-icon
+          src="https://cdn.lordicon.com/abwrkdvl.json"
+          trigger="loop"
+          delay="2000"
+          stroke="regular"
+          colors={`primary:${allFrameworks.color},secondary:${allFrameworks.color}`}
+          style={{ width: '70px', height: '70px' }}>
+        </lord-icon>
+        Skills
+      </div>
       <div className='chart-and-its-sibling'>
         <div className='chart'>
           <LineChart />
@@ -46,8 +56,8 @@ function Skills() {
                     <circle r="12" cy="12" cx="12"></circle>
                   </svg><svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.75 mr-1.5 h-3 w-3 text-green-500/80">
                     <circle r="12" cy="12" cx="12"></circle>
-                  </svg></div><span className="absolute inset-x-0 top-2 text-xs text-slate-500">Setup.jsx</span>                 
-                  <i className={`${copy}`} style={{position:'absolute',right:0,cursor:'pointer'}} onClick={handleCopyBtn}></i>
+                  </svg></div><span className="absolute inset-x-0 top-2 text-xs text-slate-500">Setup.jsx</span>
+                <i className={`${copy}`} style={{ position: 'absolute', right: 0, cursor: 'pointer' }} onClick={handleCopyBtn}></i>
               </div>
               <div className="mt-5 space-y-1.5 px-5 pb-10" ref={divRef}>
                 <p className="mt-4 font-mono text-xs font-normal tracking-wide text-violet-400">

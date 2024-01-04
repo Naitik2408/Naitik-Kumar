@@ -3,7 +3,7 @@ import './Contact.css'
 import { useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { DevTool } from '@hookform/devtools'
-import {ErrorBtn} from '../../index'
+import { ErrorBtn } from '../../index'
 
 
 function Contact() {
@@ -20,7 +20,16 @@ function Contact() {
 
   return (
     <div className='contact'>
-      <div className="contact-title"><span>#</span>Contact</div>
+      <div className="contact-title">
+        <lord-icon
+          src="https://cdn.lordicon.com/wyqtxzeh.json"
+          trigger="loop"
+          delay="2000"
+          colors={`primary:${allFrameworks.color},secondary:${allFrameworks.color}`}
+          style={{ width: '70px', height: '70px' }}>
+        </lord-icon>
+        Contact
+      </div>
       <div className='form-and-images'>
         <form onSubmit={handleSubmit(handleCross)} noValidate>
           <div className='companies'>
@@ -29,7 +38,7 @@ function Contact() {
                 value: true,
                 message: "Please select an option"
               }
-            })} style={{backgroundColor:allFrameworks.color}}>
+            })} style={{ backgroundColor: allFrameworks.color }}>
               <option value="other">Other</option>
               <option value="facebook">Facebook</option>
               <option value="amazon">Amazon</option>
@@ -68,7 +77,7 @@ function Contact() {
             minLength: 20
           })}></textarea>
           {!errors.messages?.message ? null : <ErrorBtn text={errors.messages?.message} />}
-          <button className='submit' type='submit' style={(!errors.email?.message && window.innerWidth<768) ? {marginBottom: '50px', backgroundColor:allFrameworks.color} : {marginBottom:'50px',backgroundColor:allFrameworks.color} }>Submit</button>
+          <button className='submit' type='submit' style={(!errors.email?.message && window.innerWidth < 768) ? { marginBottom: '50px', backgroundColor: allFrameworks.color } : { marginBottom: '50px', backgroundColor: allFrameworks.color }}>Submit</button>
         </form>
         <div className="image-part">
           <div className='image-box'>

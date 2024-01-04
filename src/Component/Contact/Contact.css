@@ -11,6 +11,8 @@
     margin-bottom: 0.5em;
     font-family: 'JetBrains Mono', monospace;
     color: #bec7d3;
+    display: flex;
+    align-items: center;
 }
 .contact-title span{
     color: #a87efa;

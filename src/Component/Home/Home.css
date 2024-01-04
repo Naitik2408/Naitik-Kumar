@@ -77,9 +77,6 @@
     transition: 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.744) 0px 14px 8px;
 }
-/* .profile-image-and-solical-links .image-box .image-background:hover{
-    transform: rotateZ(30deg);
-} */
 
 
 
@@ -97,7 +94,6 @@
         width: 360px;
         height: 380px;
         top: 0;
-        /* background: #00D8FF; */
     }
     .home-title{
         order: 2;
