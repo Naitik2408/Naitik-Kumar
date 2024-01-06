@@ -87,6 +87,10 @@ function Contact() {
         </div>
       </div>
       <DevTool control={control} />
+      <div className="contact-details">
+        <div className="mail"><i class="fa-solid fa-envelope"></i>naitikkumarofficial2408@gmail.com</div>
+        <div className="watsapp"><i class="fa-brands fa-square-whatsapp"></i>+91 9060557296</div>
+      </div>
     </div>
   )
 }
