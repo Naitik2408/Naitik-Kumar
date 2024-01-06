@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Project.css'
+import './Programming.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
@@ -23,7 +24,7 @@ function Project() {
           setPosts(post.documents)
         }
       } catch (error) {
-        console.log('this is error')
+        console.log('this is project error', error)
       } finally {
         setLoad(false)
       }
@@ -31,8 +32,6 @@ function Project() {
     })
   }
   getAllProject()
-
-
   const allFrameworks = useSelector(state => state.langBarData.language)
   return load ? <Loder /> : (
     <div className='project'>
@@ -49,13 +48,38 @@ function Project() {
       </div>
       <div className='all-project-cards'>
         <div className='project-headline'>
-          <div className="javascript"></div>
-          <div className="html-css-react">
-            <div className="html-css">
-              <div className="html"></div>
-              <div className="css"></div>
+          <div className="notification">
+            <div className="notiglow"></div>
+            <div className="notiborderglow"></div>
+            <div className="notititle">// Programming Languages <br /> // Technologies..</div>
+            <div className="notibody">
+              <div class="cards">
+                <div class="card html">
+                  <p class="tip"><i className="fa-brands fa-html5"></i></p>
+                </div>
+                <div class="card css">
+                  <p class="tip"><i class="fa-brands fa-css3-alt"></i></p>
+                </div>
+                <div class="card jscript">
+                  <p class="tip"><i class="fa-brands fa-js"></i></p>
+                </div>
+                <div class="card react">
+                  <p class="tip"><i class="fa-brands fa-react"></i></p>
+                </div>
+                <div class="card nodeJs">
+                  <p class="tip"><i class="fa-brands fa-node-js"></i></p>
+                  <p class="tip"><i class="fa-solid fa-circle-exclamation"></i></p>
+                </div>
+                <div class="card database">
+                  <p class="tip"><i class="fa-solid fa-database"></i></p>
+                  <p class="tip"><i class="fa-solid fa-circle-exclamation"></i></p>
+                </div>
+                <div class="card database">
+                  <p class="tip"><i class="fa-brands fa-java"></i></p>
+                  <p class="tip"><i class="fa-solid fa-circle-exclamation"></i></p>
+                </div>
+              </div>
             </div>
-            <div className="react"></div>
           </div>
         </div>
         <Swiper
@@ -67,8 +91,6 @@ function Project() {
           centeredSlides={true}
           loop={true}
           zoom={true}
-          // onSlideChange={() => console.log('slide change')}
-          // onSwiper={(swiper) => console.log(swiper)}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
@@ -82,10 +104,6 @@ function Project() {
             clickable: true
           }}
           modules={[EffectCoverflow, Pagination, Navigation]}
-
-
-
-
         >
           {posts.map((item) => {
             return <SwiperSlide key={item.$id} ><Link to={`/main-project/${item.$id}`}><ProjectCard imgUrl={item.ImageLink} hash={item.HashTags} /></Link></SwiperSlide>

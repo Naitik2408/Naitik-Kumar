@@ -1,0 +1,86 @@
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0 0 10px;
+  }
+  
+  .cards .html:hover {
+    background-color: #E44C25;
+  }
+  
+  .cards .css:hover {
+    background-color: #1B73BA;
+  }
+  
+  .cards .jscript:hover {
+    background-color: #F0D91C;
+  }
+  .cards .react:hover {
+    background-color: #00D8FF;
+  }
+  
+  .cards .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 90px;
+    width: 90px;
+    border-radius: 10px;
+    color: rgb(28, 28, 28);
+    cursor: pointer;
+    transition: 400ms;
+    background-color: rgb(208, 208, 208);
+  }
+  .cards .card:nth-child(5), .card:nth-child(6),.card:nth-child(7){
+    background-color: rgb(68, 68, 68);
+    cursor: not-allowed;
+  }
+  .cards .card:nth-child(5):hover .tip:nth-child(2), .card:nth-child(6):hover .tip:nth-child(2),.card:nth-child(7):hover .tip:nth-child(2){
+    display: block;
+  }
+  .cards .card:nth-child(5):hover .tip:nth-child(1), .card:nth-child(6):hover .tip:nth-child(1), .card:nth-child(7):hover .tip:nth-child(1){
+    display: none;
+  }
+
+  .cards .database .tip:nth-child(2), .nodeJs .tip:nth-child(2){
+    display: none;
+  }
+  .cards .card p.tip{
+    padding: 0;
+    color: rgb(28, 28, 28);
+    margin-bottom: 1.5px;
+  }
+  .cards .card p.tip i {
+    font-size: 2.9em;
+    font-weight: 700;
+  }
+  
+  .cards .card p.second-text {
+    font-size: .7em;
+    padding: 0;
+    color: rgb(28, 28, 28);
+    display: none;
+    transform: translate3d(0, 2rem, 0);
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.8s;
+  }
+  
+  .cards .card:hover {
+    transform: scale(1.2, 1.2);
+
+  }
+  .cards .card:hover p.second-text{
+    display: block;
+    transform: translate3d(0, 0, 0);
+    background-color: red;
+  }
+
+  
+  .cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+  }
