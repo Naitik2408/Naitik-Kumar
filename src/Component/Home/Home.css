@@ -159,6 +159,13 @@
     pointer-events: none;
     transition: all 0.3s;
   }
+  /* watsapp icon...........................  */
+  .whatsapp .BG {
+    background: #075e54;
+  }
+  #this-image{
+    filter: invert(89%) hue-rotate(200deg);
+  }
   
   
 
