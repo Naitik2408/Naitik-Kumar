@@ -8,6 +8,7 @@ import Loder from "./Loder/Loder";
 import ErrorBtn from "./Component/Contact/ErrorBtn/ErrorBtn";
 import ProjectCard from "./Component/Project/ProjectCard/ProjectCard";
 import LineChart from "./Component/Skills/LineChart/LineChart";
+import SubmitLoder from "./SubmitLoder/SubmitLoder";
 
 
 export {
@@ -21,4 +22,5 @@ export {
     ErrorBtn,
     ProjectCard,
     LineChart,
+    SubmitLoder
 }

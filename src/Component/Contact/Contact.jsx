@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './Contact.css'
 import { useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { DevTool } from '@hookform/devtools'
-import { ErrorBtn } from '../../index'
+import { ErrorBtn,SubmitLoder } from '../../index'
 
 
 function Contact() {
+  const [subBtn,setSubBtn]=useState(false)
+  const submitBtn=useRef(null)
   const form = useForm()
   const { register, control, handleSubmit, formState } = form;
   const { errors } = formState;
@@ -15,6 +17,14 @@ function Contact() {
 
   const handleCross = (data) => {
     console.log(data)
+    console.log('file is subbmited')
+    setSubBtn(true)
+    setTimeout(() => {
+      setSubBtn(false)
+      setTimeout(() => {
+        alert('Form is submited.For faster Reply contact on Watsapp.')
+      }, 100);
+    }, 2000);
   }
 
 
@@ -73,11 +83,10 @@ function Contact() {
             required: {
               value: true,
               message: 'Message is required.'
-            },
-            minLength: 20
+            }
           })}></textarea>
           {!errors.messages?.message ? null : <ErrorBtn text={errors.messages?.message} />}
-          <button className='submit' type='submit' style={(!errors.email?.message && window.innerWidth < 768) ? { marginBottom: '50px', backgroundColor: allFrameworks.color } : { marginBottom: '50px', backgroundColor: allFrameworks.color }}>Submit</button>
+          <button className='submit' type='submit' style={(!errors.email?.message && window.innerWidth < 768) ? { marginBottom: '50px', backgroundColor: allFrameworks.color } : { marginBottom: '50px', backgroundColor: allFrameworks.color }}>{subBtn? <SubmitLoder/>: 'Submit'}</button>
         </form>
         <div className="image-part">
           <div className='image-box'>
@@ -89,7 +98,7 @@ function Contact() {
       <DevTool control={control} />
       <div className="contact-details">
         <div className="mail"><i class="fa-solid fa-envelope"></i>naitikkumarofficial2408@gmail.com</div>
-        <div className="watsapp"><i class="fa-brands fa-square-whatsapp"></i>+91 9060557296</div>
+        <div className="watsappNo"><i class="fa-brands fa-square-whatsapp"></i>+91 9060557296</div>
       </div>
     </div>
   )
