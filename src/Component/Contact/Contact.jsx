@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import './Contact.css'
 import { useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form'
@@ -7,7 +7,6 @@ import idea from '../../assets/idea_2.png'
 
 
 function Contact() {
-  const [setSubBtn]=useState(false)
   const form = useForm()
   const { register, handleSubmit, formState } = form;
   const { errors } = formState;
@@ -16,14 +15,7 @@ function Contact() {
 
   const handleCross = (data) => {
     console.log(data)
-    console.log('file is subbmited')
-    setSubBtn(true)
-    setTimeout(() => {
-      setSubBtn(false)
-      setTimeout(() => {
-        alert('Form is submited.For faster Reply contact on Watsapp.')
-      }, 100);
-    }, 2000);
+    alert('Form is submited. For faster Reply contact on Watsapp');
   }
 
 
@@ -94,5 +86,4 @@ function Contact() {
     </div>
   )
 }
-
 export default Contact
