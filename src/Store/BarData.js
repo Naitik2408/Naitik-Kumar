@@ -36,7 +36,7 @@ const BarData=createSlice({
                 months: ['Feb(23)','April(23)','Jul(23)','Oct(23)','Today'],
                 value:[0,30,35,50,88],
                 color:'#1B73BA',
-                framwork: ['Tilwind Css','Bulma']
+                framwork: ['Tilwind Css','Bootstrap']
               }
             };
         },
@@ -49,7 +49,7 @@ const BarData=createSlice({
                 months: ['Jun(23)','Aug(23)','Oct(23)','Today'],
                 value:[10,45,48,56,60],
                 color:'#F0D91C',
-                framwork: ['ReactJs', 'NextJs','AngularJs','Vue.js']
+                framwork: ['ReactJs', 'GSAP']
               }
             };
         },
@@ -66,9 +66,48 @@ const BarData=createSlice({
               }
             };
         },
+        setGit: (state, action) => {
+            return {
+              ...state,
+              language: {
+                ...state.language,
+            name:'Git(%)',
+            months: ['26th Nov','5th Dec','10th Dec','15th Dec','Today'],
+            value:[0,8,29,50,70],
+            color:'#E44C25',
+            framwork: []
+              }
+            };
+        },
+        setGithub: (state, action) => {
+            return {
+              ...state,
+              language: {
+                ...state.language,
+            name:'Github(%)',
+            months: ['26th Nov','5th Dec','10th Dec','15th Dec','Today'],
+            value:[0,29,40,48,69],
+            color:'rgb(183, 172, 255)',
+            framwork: []
+              }
+            };
+        },
+        setTailwind: (state, action) => {
+            return {
+              ...state,
+              language: {
+                ...state.language,
+            name:'Tailwind(%)',
+            months: ['26th Nov','5th Dec','10th Dec','15th Dec','Today'],
+            value:[0,33,54,69,84],
+            color:'#F0D91C',
+            framwork: []
+              }
+            };
+        },
 
     }
 })
 
-export const {setHtml,setCss,setJavascript,setReact}= BarData.actions;
+export const {setHtml,setCss,setJavascript,setReact,setGit,setGithub,setTailwind}= BarData.actions;
 export default BarData.reducer;

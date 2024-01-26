@@ -1,97 +1,69 @@
-.main-project{
-    width: 100%;
-    height: 100vh;
-    padding: 1rem;
-}
-.main-project-image{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-}
-.main-project-image .image-title{
-    color: rgb(222, 222, 222);
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-    font-weight: 500;    
-    text-shadow: 5px 5px 10px rgb(0, 0, 0),
-    5px 5px 1px rgb(0, 0, 0)
-}
-.main-project-image img{
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.844) 0px 14px 10px;
-}
-.main-porject-details{
-    color: rgb(226, 226, 226);
-    margin-top: 30px;
-    font-weight: 200;
-    padding: 10px;
-    border-radius: 20px;
-    font-size: 1rem;
-}
-.links{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.links li{
-    margin-left: 15px;
+/* tooltip part...............  */
+.tooltip-container {
+    --background: #333333;
+    --color: #e8e8e8;
+    position: relative;
     cursor: pointer;
-}
-.links li:nth-child(1){
-    padding: 9px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 5px rgb(0, 0, 0),
-    1px 1px 5px rgb(0, 0, 0)
-}
-.links li:nth-child(2) .ab{
-    font-size: 0.95em;
-    padding: 5px 8px;
-    border-radius: 4px;
-    font-weight: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 1px 1px 5px rgb(0, 0, 0),
-    1px 1px 5px rgb(0, 0, 0)
-}
-.links .previewIcon{
-    margin-left: 6px;
-}
-.project-details-about .features{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 5px;
-}
-.project-details-about .features .icons{
-    margin-right: 4px;
-    color: goldenrod;
-}
-.project-details-about ul{
-    list-style: circle;
-}
-.project-details-about ul li{
-    margin-bottom: 10px;
-    line-height: 20px;
-}
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color);
+    border-radius: 8px;
+    text-transform: uppercase;
+    display: grid;
+    place-items: center;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.3em 0.6em;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    background: var(--background);
+    z-index: -1;
+    border-radius: 8px;
+    scale: 0;
+    transform-origin: 0 0;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  }
+  
+  .tooltip-container:hover .tooltip {
+    top: -100%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    scale: 1;
+    animation: shake 0.5s ease-in-out both;
+  }
+  
+  
+  @keyframes shake {
+    0% {
+      rotate: 0;
+    }
+  
+    25% {
+      rotate: 7deg;
+    }
+  
+    50% {
+      rotate: -7deg;
+    }
+  
+    75% {
+      rotate: 1deg;
+    }
+  
+    100% {
+      rotate: 0;
+    }
+  }
+  
 
-@media (min-width: 768px){
-    .main-project{
-        display: flex;
-    }
-    .main-project-image{
-        width: 40%;
-        height: 100%;
-        justify-content: flex-start;
-    }
-    .main-porject-details{
-        padding: 40px;
-        width: 60%;
-        height: 100%;
-        margin-top: 0;
-    }
-}

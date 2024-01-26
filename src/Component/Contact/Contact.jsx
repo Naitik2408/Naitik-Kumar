@@ -2,15 +2,14 @@ import React, { useRef, useState } from 'react'
 import './Contact.css'
 import { useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form'
-import { DevTool } from '@hookform/devtools'
-import { ErrorBtn,SubmitLoder } from '../../index'
+import { ErrorBtn } from '../../index'
+import idea from '../../assets/idea_2.png'
 
 
 function Contact() {
-  const [subBtn,setSubBtn]=useState(false)
-  const submitBtn=useRef(null)
+  const [setSubBtn]=useState(false)
   const form = useForm()
-  const { register, control, handleSubmit, formState } = form;
+  const { register, handleSubmit, formState } = form;
   const { errors } = formState;
   const allFrameworks = useSelector(state => state.langBarData.language)
 
@@ -29,8 +28,8 @@ function Contact() {
 
 
   return (
-    <div className='contact'>
-      <div className="contact-title">
+    <div className='w-full min-h-screen p-4'>
+      <div className="flex items-center text-4xl mb-5">
         <lord-icon
           src="https://cdn.lordicon.com/wyqtxzeh.json"
           trigger="loop"
@@ -40,15 +39,15 @@ function Contact() {
         </lord-icon>
         Contact
       </div>
-      <div className='form-and-images'>
-        <form onSubmit={handleSubmit(handleCross)} noValidate>
+      <div className='w-full flex'>
+        <form onSubmit={handleSubmit(handleCross)} noValidate className='w-[50%] flex flex-col'>
           <div className='companies'>
             <select {...register('comp', {
               required: {
                 value: true,
                 message: "Please select an option"
               }
-            })} style={{ backgroundColor: allFrameworks.color }}>
+            })} style={{ backgroundColor: allFrameworks.color }} className='w-full p-3 rounded-md shadow-black shadow-lg text-black mb-5'>
               <option value="other">Other</option>
               <option value="facebook">Facebook</option>
               <option value="amazon">Amazon</option>
@@ -63,7 +62,7 @@ function Contact() {
               value: true,
               message: 'Name is required'
             }
-          })} />
+          })} className='w-full p-3 rounded-md shadow-black shadow-lg text-slate-100 mb-1 bg-slate-900 outline-none' />
 
           {!errors.username?.message ? null : <ErrorBtn text={errors.username?.message} />}
 
@@ -75,7 +74,7 @@ function Contact() {
               value: true,
               message: 'Email is required'
             }
-          })} />
+          })} className='w-full p-3 rounded-md shadow-black shadow-lg text-slate-100 mt-4 mb-1 bg-slate-900 outline-none' />
           {!errors.email?.message ? null : <ErrorBtn text={errors.email?.message} />}
 
 
@@ -84,21 +83,13 @@ function Contact() {
               value: true,
               message: 'Message is required.'
             }
-          })}></textarea>
+          })} className='w-full p-3 rounded-md shadow-black shadow-lg text-slate-100 mt-4 mb-1 bg-slate-900 outline-none'></textarea>
           {!errors.messages?.message ? null : <ErrorBtn text={errors.messages?.message} />}
-          <button className='submit' type='submit' style={(!errors.email?.message && window.innerWidth < 768) ? { marginBottom: '50px', backgroundColor: allFrameworks.color } : { marginBottom: '50px', backgroundColor: allFrameworks.color }}>{subBtn? <SubmitLoder/>: 'Submit'}</button>
+          <button className='w-20 px-4 py-2 flex justify-center items-center shadow-lg  shadow-black rounded-lg text-black mt-4 bg-green-400' type='submit' style={{ backgroundColor: allFrameworks.color }} >Submit</button>
         </form>
-        <div className="image-part">
-          <div className='image-box'>
-            <div className="image1"></div>
-            <div className="image2"></div>
-          </div>
+        <div className="w-[50%] flex justify-center">
+          <img src={idea} alt="" className='b h-[550px]' />
         </div>
-      </div>
-      <DevTool control={control} />
-      <div className="contact-details">
-        <div className="mail"><i class="fa-solid fa-envelope"></i>naitikkumarofficial2408@gmail.com</div>
-        <div className="watsappNo"><i class="fa-brands fa-square-whatsapp"></i>+91 9060557296</div>
       </div>
     </div>
   )

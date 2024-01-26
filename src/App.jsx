@@ -1,6 +1,5 @@
 import './App.css'
-import {Home, Project,Skills,Contact,Navbar} from './index'
-import './Component/Navbar/Navbar.css'
+import {Home, Project,Skills,Contact} from './index'
 
 function App() {
   return (
@@ -9,7 +8,6 @@ function App() {
     <Project id='project' />
     <Skills id='skills'/>
     <Contact id='contact'/>
-    {(window.innerWidth < 768) && <Navbar/>  }
     </>
   )
 }

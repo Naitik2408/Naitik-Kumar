@@ -34,7 +34,7 @@ function Project() {
   getAllProject()
   const allFrameworks = useSelector(state => state.langBarData.language)
   return load ? <Loder /> : (
-    <div className='project'>
+    <div className='w-full p-4 h-screen'>
       <div className='project-title'>
         <lord-icon
           src="https://cdn.lordicon.com/gqjpawbc.json"
@@ -46,41 +46,13 @@ function Project() {
         </lord-icon>
         Projects
       </div>
-      <div className='all-project-cards'>
-        <div className='project-headline'>
-          <div className="notification">
-            <div className="notiglow"></div>
-            <div className="notiborderglow"></div>
-            <div className="notititle">// Programming Languages <br /> // Technologies..</div>
-            <div className="notibody">
-              <div class="cards">
-                <div class="card html">
-                  <p class="tip"><i className="fa-brands fa-html5"></i></p>
-                </div>
-                <div class="card css">
-                  <p class="tip"><i class="fa-brands fa-css3-alt"></i></p>
-                </div>
-                <div class="card jscript">
-                  <p class="tip"><i class="fa-brands fa-js"></i></p>
-                </div>
-                <div class="card react">
-                  <p class="tip"><i class="fa-brands fa-react"></i></p>
-                </div>
-                <div class="card nodeJs">
-                  <p class="tip"><i class="fa-brands fa-node-js"></i></p>
-                  <p class="tip"><i class="fa-solid fa-circle-exclamation"></i></p>
-                </div>
-                <div class="card database">
-                  <p class="tip"><i class="fa-solid fa-database"></i></p>
-                  <p class="tip"><i class="fa-solid fa-circle-exclamation"></i></p>
-                </div>
-                <div class="card database">
-                  <p class="tip"><i class="fa-brands fa-java"></i></p>
-                  <p class="tip"><i class="fa-solid fa-circle-exclamation"></i></p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className='all-project-cards flex justify-between items-center'>
+        <div className="notification w-[40%] h-[100%]">
+          <div className="notiglow"></div>
+          <div className="notiborderglow"></div>
+          <div className="notititle">About Me</div>
+          <div className="notibody">
+            Hey there! Naitik Kumar, second-year college student and front-end web developer by day, aspiring full-stack alchemist by night. I'm turning digital dreams into reality, one pixel at a time. Beyond crafting beautiful interfaces with HTML, CSS, and JavaScript, I'm diving deep into the back-end realm. Collaboration fuels my fire, so Git and GitHub are my playgrounds. Check out my portfolio for a glimpse into my brewing creations! Let's connect, discuss tech trends.**</div>
         </div>
         <Swiper
           className='swiper-container'
@@ -106,19 +78,14 @@ function Project() {
           modules={[EffectCoverflow, Pagination, Navigation]}
         >
           {posts.map((item) => {
-            return <SwiperSlide key={item.$id} ><Link to={`/main-project/${item.$id}`}><ProjectCard imgUrl={item.ImageLink} hash={item.HashTags} /></Link></SwiperSlide>
+            return <SwiperSlide key={item.$id} ><Link to={`/main-project/${item.$id}`}><ProjectCard imgUrl={item.ImageLink} hash={item.HashTags} title={item.Title} /></Link></SwiperSlide>
           })}
 
-          {window.innerWidth > 768 && <div class="swiper-button-prev"></div>}
-          {window.innerWidth > 768 && <div class="swiper-button-next"></div>}
+          {window.innerWidth > 768 && <div className="swiper-button-prev"></div>}
+          {window.innerWidth > 768 && <div className="swiper-button-next"></div>}
           <div className="swiper-pagination"></div>
         </Swiper>
       </div>
-      <div className='view-all-projects'>
-        <Link to='/all-projects'><div className='project-button' style={{ backgroundColor: allFrameworks.color }}>All Projects</div></Link>
-      </div>
-
-
     </div>
   )
 }

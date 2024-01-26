@@ -1,9 +1,5 @@
 import { Client, Databases } from "appwrite";
 import conf from "../script";
-console.log(conf.appwrite_url)
-console.log(conf.project_id)
-console.log(conf.database_id)
-console.log(conf.collection_id)
 
 export class Service{
     client = new Client();
